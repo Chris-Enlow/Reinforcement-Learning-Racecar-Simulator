@@ -15,8 +15,6 @@ __pycache__/
 configs/*.json
 models/*.pth
 
-touch configs/.gitkeep
-touch models/.gitkeep
 
 # Sensitive config files
 config.json
