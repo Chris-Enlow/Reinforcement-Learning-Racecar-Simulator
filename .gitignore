@@ -10,7 +10,13 @@ __pycache__/
 *.pth
 *.pt
 *.h5
+
+# Ignore all data files within the configs and models folders
 configs/*.json
+models/*.pth
+
+touch configs/.gitkeep
+touch models/.gitkeep
 
 # Sensitive config files
 config.json
