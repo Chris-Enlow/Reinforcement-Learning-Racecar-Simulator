@@ -193,10 +193,9 @@ def calculate_camera_offset(car, camera_offset, screen_width=1200, screen_height
     return camera_offset
 
 # Prompt user for epsilon value or use default
-def prompt_epsilon(training_state):
+def prompt_epsilon(training_state, user_input):
     while True:
         try:
-            user_input = input("➡️ Enter new epsilon (0.0 to 1.0), or press Enter for default: ")
             if user_input == "":
                 saved_epsilon = training_state.get_current_epsilon()
                 epsilon = saved_epsilon if saved_epsilon is not None else 0.25

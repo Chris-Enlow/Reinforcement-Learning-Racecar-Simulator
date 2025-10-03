@@ -147,6 +147,7 @@ def run_episode(car, track, agent, episode_mgr, renderer, event_handler, episode
 
 def main():
     print("=== AI Racecar Training Started ===")
+    user_input = input("➡️ Enter new epsilon (0.0 to 1.0), or press Enter for default: ")
     
     # Load training state
     training_state = TrainingState()
@@ -175,7 +176,7 @@ def main():
             agent.policy_net.load_state_dict(torch.load(model_path))
             agent.target_net.load_state_dict(agent.policy_net.state_dict())
             print(f"✓ Model loaded from {model_path}")
-            agent.epsilon = prompt_epsilon(training_state)
+            agent.epsilon = prompt_epsilon(training_state, user_input)
         except Exception as e:
             print(f"✗ Could not load model: {e}")
             print("Starting fresh training...")
